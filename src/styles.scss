@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+// 1. Importa le variabili di Bootstrap
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+
+// 2. Sovrascrivi i colori di Bootstrap
+$primary: #dc0043;
+$secondary: #00A699;
+$dark: #484848;
+$light: #FFFFFF;
+$gray-600: #767676;
+
+// Facoltativo: personalizza altre variabili di Bootstrap
+$body-bg: $light;
+$body-color: $dark;
+
+// 3. Crea la mappa dei colori personalizzati
+$my-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "dark": $dark,
+  "light": $light,
+  "gray-600": $gray-600
+);
+$theme-colors: map-merge($theme-colors, $my-colors);
+// 4. Importa Bootstrap con le personalizzazioni
+@import "bootstrap/scss/bootstrap";
